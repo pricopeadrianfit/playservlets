@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        function sendValues(param){
+
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange=callback;
+            var url ="receptor"+"?nr1="+document.getElementById("nr1").value+"&nr2="+document.getElementById("nr2").value+"&nr3="+document.getElementById("nr3").value+"&op="+param;
+            xmlHttp.open("GET",url,true);
+
+            xmlHttp.send();
+        }
+        function callback() {
+
+            if(xmlHttp.readyState==4 && xmlHttp.status==200) {
+                var value = xmlHttp.responseText;
+                document.getElementById("resultArea").innerHTML = value;
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    Nr1:<input type="text" name="nr1" id="nr1" /></br>
+    Nr2:<input type="text" name="nr2" id="nr2" /></br>
+    Nr3:<input type="text" name="nr3" id="nr3" /></br>
+    <input type="button" name="a" id="a" value="+" onclick="sendValues(1)"/>&nbsp;
+</div>
+
+<div id="resultArea"></div>
+</body>
+</html>
