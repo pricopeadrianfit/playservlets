@@ -7,7 +7,7 @@
 
             xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange=callback;
-            var url ="receptor"+"?nr1="+document.getElementById("nr1").value+"&nr2="+document.getElementById("nr2").value+"&nr3="+document.getElementById("nr3").value+"&op="+param;
+            var url ="receptor"+"?height="+document.getElementById("input_1").value+"&weight="+document.getElementById("input_3").value+"&op="+param;
             xmlHttp.open("GET",url,true);
 
             xmlHttp.send();
@@ -20,18 +20,198 @@
             }
         }
     </script>
-    <meta charset="UTF-8">
-    <title>Title</title>
 </head>
-<body>
-<div>
 
-    Nr1:<input type="text" name="nr1" id="nr1" /></br>
-    Nr2:<input type="text" name="nr2" id="nr2" /></br>
-    Nr3:<input type="text" name="nr3" id="nr3" /></br>
-    <input type="button" name="a" id="a" value="+" onclick="sendValues(1)"/>&nbsp;
-</div>
+        <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.10772" type="text/javascript"></script>
+        <script type="text/javascript">
+            JotForm.init(function(){
+                JotForm.highlightInputs = false;
+                JotForm.alterTexts({"alphabetic":"This field can only contain letters","alphanumeric":"This field can only contain letters and numbers.","confirmClearForm":"Are you sure you want to clear the form","confirmEmail":"E-mail does not match","email":"Enter a valid e-mail address","incompleteFields":"Please complete required (*) fields.","lessThan":"Your score should be less than","numeric":"This field can only contain numeric values","pleaseWait":"Please wait...","required":"This field is required.","uploadExtensions":"You can only upload following files:","uploadFilesize":"File size cannot be bigger than:"});
+                JotForm.clearFieldOnHide="disable";
+                JotForm.onSubmissionError="jumpToSubmit";
+            });
+        </script>
+        <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.10772" rel="stylesheet" type="text/css" />
+        <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.10772" />
+        <style type="text/css">
+            .form-label-left{
+                width:80px !important;
+            }
+            .form-line{
+                padding-top:12px;
+                padding-bottom:12px;
+            }
+            .form-label-right{
+                width:80px !important;
+            }
+            .form-all{
+                width:456px;
+                color:#DFCBB0 !important;
+                font-family:'Verdana';
+                font-size:12px;
+            }
+            .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+                color: #DFCBB0;
+            }
 
-<div id="resultArea"></div>
-</body>
+        </style>
+
+        <style type="text/css" id="form-designer-style">
+            /* Injected CSS Code */
+            /*--Textbox style*/.form-textbox{
+                border: none;
+                color: #969696;
+                font-size: 10pt;
+                font-family: Arial, Verdana;
+                padding: 10px 15px 5px 15px;
+                width: 402px !important;
+                height:25px !important;
+                float: left;
+                margin-bottom: 20px;
+                background: url('//cms.interlogy.com/uploads/image_upload/image_upload/global/6316_contact-input-small.jpg') no-repeat 0 0;
+                border: 1px solid black;
+            }/*--Textarea style*/
+            .form-textarea{
+                border: none;
+                color: #969696;
+                font-size: 10pt;
+                font-family: Arial, Verdana;
+                padding: 10px 15px 5px 15px;
+                height: 25px;
+                width: 402px !important;
+                float: left;
+                background: url('//cms.interlogy.com/uploads/image_upload/image_upload/global/6317_contact-input-large.jpg') no-repeat 0 0;
+                border: 1px solid black;
+                height: 98px;
+                margin-bottom: 15px;
+            }/*--form submit button-*/
+            .form-submit-button{
+                height: 26px;
+                width: 100px;
+                background: url('//cms.interlogy.com/uploads/image_upload/image_upload/global/6318_submit-button.jpg') no-repeat 0 0;
+                padding: 1px 0 0 15px;
+                font-size: 8pt;
+                font-family: Georgia, "Times New Roman";
+                color: #378BAA;
+                border:none !important;
+            }
+            .form-submit-button:hover{
+                background: url('//cms.interlogy.com/uploads/image_upload/image_upload/global/6318_submit-button.jpg') no-repeat 0 -26px;
+                color: #00C4FA;
+            }/*--form label style--*/
+            .form-label-left, .form-label-top, .form-label-right{
+                font-weight:bold;
+                color:#DFCBB0 !important;
+            }/*--form background--*/
+            .form-all{
+                border: solid 1px #C0C0C0;
+                -moz-box-shadow: 0 0 5px #888;
+                -webkit-box-shadow: 0 0 5px#888;
+                box-shadow: 0 0 5px #888;
+                border-radius:5px;
+                -webkit-border-radius:5px;
+                -moz-border-radius:5px;
+                background:url('//cms.interlogy.com/uploads/image_upload/image_upload/global/6320_content-bg.jpg') #111111 no-repeat top center;
+            }/*--move error below submit button--*/
+            .form-button-error{
+                display:block;
+            }/*--remove error button--*/
+            .form-error-message {
+                display: none !important;
+            }
+            .form-line-error {
+                background:none repeat scroll 0 0;
+            }.form-buttons-wrapper{
+                 margin-left: 0px !important;
+             }/*--remove focus--*/
+            .form-textbox:focus, .form-textarea:focus{
+                outline:none;
+            }.form-captcha input{
+                 color: #969696;
+                 font-size: 10pt;
+                 font-family: Arial, Verdana;
+                 padding: 5px;
+                 width: 125px !important;
+                 height: 10px !important;
+                 float: left;
+                 margin-bottom: 20px;
+                 background: transparent !important;
+                 border: 1px solid #2C2C2C !important;
+                 -moz-border-radius: 4px 4px 4px 4px;
+                 -webkit-border-radius: 4px;
+                 border-radius: 4px 4px 4px 4px;
+             }.form-captcha {
+                  border: 1px solid #2C2C2C !important;
+                  background: transparent !important;
+              }
+            /* Injected CSS Code */
+        </style>
+<h1 style="font-family:Arial, Helvetica, sans-serif;">BMI Calculator form</h1>
+        <form class="jotform-form" action="https://submit.jotformeu.com/submit/60175757402354/" method="post" name="form_60175757402354" id="60175757402354" accept-charset="utf-8">
+            <input type="hidden" name="formID" value="60175757402354" />
+            <div class="form-all">
+                <ul class="form-section page-section">
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_5">
+                        <label class="form-label form-label-top form-label-auto" id="label_5" >
+                            Name
+          <span class="form-required">
+            *
+          </span>
+                        </label>
+                        <div id="cid_1" class="form-input-wide jf-required">
+                            <input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_5" name="name" size="38" value="" />
+                        </div>
+                    </li>
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_6">
+                        <label class="form-label form-label-top form-label-auto" id="label_6">
+                            Email
+          <span class="form-required">
+            *
+          </span>
+                        </label>
+                        <div id="cid_3" class="form-input-wide jf-required">
+                            <input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_6" name="email" size="38" value="" />
+                        </div>
+                    </li>
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_1">
+                        <label class="form-label form-label-top form-label-auto" id="label_1" for="input_1">
+                            Your height(meters)
+          <span class="form-required">
+            *
+          </span>
+                        </label>
+                        <div id="cid_1" class="form-input-wide jf-required">
+                            <input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_1" name="height" size="15" />
+                        </div>
+                    </li>
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+                        <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
+                            Your weight (kg)
+          <span class="form-required">
+            *
+          </span>
+                        </label>
+                        <div id="cid_3" class="form-input-wide jf-required">
+                            <input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_3" name="weight" size="38" />
+                        </div>
+                    </li>
+                    <li class="form-line jf-required" data-type="control_textarea" id="id_4">
+                        <label class="form-label form-label-top form-label-auto" id="label_4" >
+                            Your BMI is:
+                        </label>
+                        <div id="resultArea"></div>
+                    </li>
+                    <li class="form-line" data-type="control_button" id="id_2">
+                        <div id="cid_2" class="form-input-wide">
+                            <div style="text-align:left" class="form-buttons-wrapper">
+                                <input type="button" name="a" id="a" value="Calculate BMI" onclick="sendValues(1)"/>&nbsp;
+                </ul>
+            </div>
+        </form>
+        </tbody>
+    </table>
+</form>
+
+</tbody>
 </html>
