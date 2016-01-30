@@ -35,6 +35,7 @@ public class A extends HttpServlet {
         pacientnou.h=sNr1;
         pacientnou.w=sNr2;
 
+
         BMI = weight / (height * height);
 
         String sNr5 = Float.toString(BMI);

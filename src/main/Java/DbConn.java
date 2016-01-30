@@ -31,6 +31,7 @@ public class DbConn {
         // 3. obtain a connection
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
+
         // 4. create a query statement
         PreparedStatement pSt = conn.prepareStatement("INSERT INTO bmi (name, email, height, weight,index_bmi) VALUES (?,?,?,?,?)");
         pSt.setString(1, p.name);
