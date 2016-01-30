@@ -6,26 +6,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 class Pacient {
-    private String name;
-    private String email;
+    String name;
+    String email;
     String h;
     String w;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    String indexBMI;
 }
 
 
@@ -45,17 +30,16 @@ public class A extends HttpServlet {
 
         float BMI;
         Pacient pacientnou =new Pacient();
-        pacientnou.setName(sNr3);
-        pacientnou.setEmail(sNr4);
+        pacientnou.name=sNr3;
+        pacientnou.email=sNr4;
         pacientnou.h=sNr1;
         pacientnou.w=sNr2;
 
-        System.out.println(pacientnou.getName());
-       System.out.println(pacientnou.getEmail());
-       System.out.println(pacientnou.h);
-       System.out.println(pacientnou.w);
-
         BMI = weight / (height * height);
+
+        String sNr5 = Float.toString(BMI);
+        pacientnou.indexBMI=sNr5;
+
 
         try {
             DbConn.demoCreate(pacientnou);
@@ -68,6 +52,7 @@ public class A extends HttpServlet {
         PrintWriter out =resp.getWriter();//deschid canal cu browserul
 
         out.println(BMI);
+
 
         if (BMI < 18.5) {
             out.printf("  You are underweight! Go home and eat!");

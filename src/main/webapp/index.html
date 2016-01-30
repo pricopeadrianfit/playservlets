@@ -3,11 +3,11 @@
 <head>
 
     <script>
-        function sendValues(param){
+        function sendValues(){
 
             xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange=callback;
-            var url ="receptor"+"?height="+document.getElementById("input_1").value+"&weight="+document.getElementById("input_3").value+"&op="+param;
+            var url ="receptor"+"?height="+document.getElementById("input_1").value+"&weight="+document.getElementById("input_3").value+"&name="+document.getElementById("input_5").value+"&email="+document.getElementById("input_6").value+"&BMI="+document.getElementById("resultArea").value;
             xmlHttp.open("GET",url,true);
 
             xmlHttp.send();
