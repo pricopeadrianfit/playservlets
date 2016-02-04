@@ -7,8 +7,9 @@ public class DbConn {
 
     public static void main(String[] args) {
         try {
-            Pacient pac = new Pacient();
-            demoCreate(pac);
+             Pacient pac = new Pacient();
+             demoCreate(pac);
+
 
 
         } catch (ClassNotFoundException e) {
@@ -43,9 +44,10 @@ public class DbConn {
 
         // 5. execute a prepared statement
         int rowsInserted = pSt.executeUpdate();
-         System.out.println("inserted:"+rowsInserted);
+        System.out.println("inserted:" + rowsInserted);
         // 6. close the objects
         pSt.close();
         conn.close();
     }
 }
+
