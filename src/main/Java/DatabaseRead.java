@@ -1,27 +1,21 @@
+
+import javax.sql.DataSource;
 import java.sql.*;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-
-/**
- * Created by condor on 26/02/15.
- * FastTrackIT, 2015
- * <p/>
- * DEMO ONLY PURPOSES, IT MIGHT CONTAINS INTENTIONALLY ERRORS OR ESPECIALLY BAD PRACTICES
- *
- * make sure you refactor it and remove lots of bad practices like loading the driver multiple times or
- * repeating the same common code multiple times
- *
- * BTW, exercise 1: how we reorg this/refactor in small pieces
- */
 public class DatabaseRead {
+    public DataSource dataSource;
 
+    public DatabaseRead(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public static void main(String[] args) {
 
         try {
 
-            demoRead();
-
+            list();
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -31,8 +25,10 @@ public class DatabaseRead {
 
     }
 
-    private static void demoRead() throws ClassNotFoundException, SQLException {
+    public static List<Pacient> list() throws ClassNotFoundException, SQLException {
         // 1. load driver
+
+        List<Pacient> pacienti = new ArrayList<Pacient>();
         Class.forName("org.postgresql.Driver");
 
         // 2. define connection params to db
@@ -47,19 +43,23 @@ public class DatabaseRead {
         Statement st = conn.createStatement();
 
         // 5. execute a query
-        ResultSet rs = st.executeQuery("SELECT email FROM bmi");
+        ResultSet rs = st.executeQuery("SELECT name,email,weight,height, index_bmi FROM bmi");
 
         // 6. iterate the result set and print the values
         while (rs.next()) {
-
-            System.out.print(rs.getString("email").trim());
-            System.out.print("---");
-
+            Pacient pacient = new Pacient();
+            pacient.setName(rs.getString("name"));
+            pacient.setEmail(rs.getString("email"));
+            pacient.setW(rs.getString("weight"));
+            pacient.setH(rs.getString("height"));
+            pacient.setIndexBMI(rs.getString("index_bmi"));
+            pacienti.add(pacient);
         }
-
         // 7. close the objects
         rs.close();
         st.close();
         conn.close();
+        return pacienti;
     }
 }
+

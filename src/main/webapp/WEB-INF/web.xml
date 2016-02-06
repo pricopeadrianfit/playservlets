@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>ServletDeDemo</servlet-name>
-    <servlet-class>A</servlet-class>
+    <servlet-class>UiServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

@@ -10,8 +10,6 @@ public class DbConn {
              Pacient pac = new Pacient();
              demoCreate(pac);
 
-
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

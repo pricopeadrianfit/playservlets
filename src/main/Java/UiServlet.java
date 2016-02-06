@@ -5,16 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-class Pacient {
-    String name;
-    String email;
-    String h;
-    String w;
-    String indexBMI;
-}
 
 
-public class A extends HttpServlet {
+public class UiServlet extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
