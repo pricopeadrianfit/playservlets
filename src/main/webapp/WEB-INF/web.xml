@@ -15,4 +15,9 @@
     <url-pattern>/receptor</url-pattern>
   </servlet-mapping>
 
+  <resource-ref>
+  <res-ref-name>jdbc/Agenda_Adrian</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+</resource-ref>
 </web-app>
