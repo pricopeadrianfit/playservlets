@@ -15,6 +15,17 @@
     <url-pattern>/receptor</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>DbServlet</servlet-name>
+    <servlet-class>DbServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DbServlet</servlet-name>
+    <url-pattern>/pacienti</url-pattern>
+  </servlet-mapping>
+
+
   <resource-ref>
   <res-ref-name>jdbc/Agenda_Adrian</res-ref-name>
   <res-type>javax.sql.DataSource</res-type>

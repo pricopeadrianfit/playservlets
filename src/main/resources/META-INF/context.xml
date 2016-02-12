@@ -1,0 +1,7 @@
+<Context>
+...
+<Resource name="jdbc/Agenda_Adrian" auth="Container"
+          type="javax.sql.DataSource"
+          description="Pacienti data bases"/>
+...
+</Context>
